@@ -24,15 +24,11 @@ router.post("/sign-in", async (req, res) => {
     }
 
 
-    // here too-----------------------------------
-
     req.session.user = {
         username: userInDB.username,
         _id: userInDB._id,
     }
 
-
-    // here------------------------------------------
 
     req.session.save(() => {
         res.redirect("/")
@@ -44,9 +40,6 @@ router.get("/sign-out", (req, res) => {
         res.redirect('/')
     })
 })
-
-// here ---------------------------------------------
-
 
 
 router.post("/sign-up", async (req, res) => {
